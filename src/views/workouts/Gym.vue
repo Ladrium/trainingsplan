@@ -39,7 +39,7 @@
           v-for="(workout, i) in day.workouts"
           :key="workout.title"
           link
-          @click="overlay = true; current = { name: workout.name, sets: workout.sets, reps: workout.reps, img: require(`@/assets/${i}-${j}.png`)}"
+          @click="overlay = true; current = { name: workout.name, sets: workout.sets, reps: workout.reps, img: require(`@/assets/${j}-${i}.png`)}"
         >
           <v-list-item-content>
             <v-list-item-title v-text="workout.name"></v-list-item-title>
