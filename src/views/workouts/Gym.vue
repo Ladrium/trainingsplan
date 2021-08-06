@@ -17,8 +17,8 @@
           <v-card-title></v-card-title>
         </v-img>
         <v-card-text>
-          <div>Sets: {{current.sets}}</div>
-          <div>Reps: {{current.reps}}</div>
+          <div>Sets: {{ current.sets }}</div>
+          <div>Reps: {{ current.reps }}</div>
         </v-card-text>
       </v-card>
     </v-overlay>
@@ -34,17 +34,34 @@
             <v-list-item-title v-text="day.name"></v-list-item-title>
           </v-list-item-content>
         </template>
-
-        <v-list-item
-          v-for="(workout, i) in day.workouts"
-          :key="workout.title"
-          link
-          @click="overlay = true; current = { name: workout.name, sets: workout.sets, reps: workout.reps, img: require(`@/assets/${j}-${i}.png`)}"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="workout.name"></v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+        <v-simple-table>
+          <template v-slot:default>
+            <thead>
+            <tr>
+              <th class="text-left">
+                Name
+              </th>
+              <th class="text-left">
+                Sets
+              </th>
+              <th>
+                Reps
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr
+              v-for="(workout, i) in day.workouts"
+              :key="workout.name"
+              @click="overlay = true; current = { name: workout.name, sets: workout.sets, reps: workout.reps, img: require(`@/assets/${j}-${i}.png`)}"
+            >
+              <td>{{ workout.name }}</td>
+              <td>{{ workout.sets }}</td>
+              <td>{{ workout.reps }}</td>
+            </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
       </v-list-group>
     </v-list>
   </v-container>
