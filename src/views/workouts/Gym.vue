@@ -118,11 +118,11 @@ export default Vue.extend({
       name: "2. Rücken + Bizeps",
       workouts: [{
         name: "Seated Cable Rows",
-        sets: 2,
+        sets: 3,
         reps: "8–10"
       }, {
         name: "Front Lat Pulldown",
-        sets: 2,
+        sets: 3,
         reps: "8–10"
       }, {
         name: "Bent Over Barbell Rows",
@@ -161,15 +161,15 @@ export default Vue.extend({
         reps: "10-12"
       }, {
         name: "Russian Twist",
-        sets: 1,
+        sets: 2,
         reps: "12-15"
       }, {
         name: "Bycicle Crunches",
-        sets: 20,
+        sets: 10,
         reps: "Max"
       }, {
         name: "Plank",
-        sets: 3,
+        sets: 2,
         reps: "Max Hold"
       }, {
         name: "Palms-Up Barbell Wrist Curl",
@@ -293,3 +293,8 @@ export default Vue.extend({
   })
 })
 </script>
+<style>
+tbody:hover {
+  cursor: pointer;
+}
+</style>
