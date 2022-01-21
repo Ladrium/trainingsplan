@@ -48,27 +48,32 @@
 <script lang="ts">
 import Vue from "vue"
 
+const routes = { lotty: "indigo", gym: "cyan", home: "teal"}
+
 export default Vue.extend({
   name: "Navbar",
   data: () => ({
-    color: "green",
     items: [{
-      title: "Warmup",
-      icon: "mdi-run-fast",
-      color: "teal",
-      route: "/workouts/warmup"
+      title: "Lotty",
+      icon: "mdi-face-woman-shimmer-outline",
+      route: "/workouts/lotty"
     }, {
       title: "Home",
       icon: "mdi-home",
-      color: "indigo",
       route: "/workouts/home"
     }, {
       title: "Gym",
       icon: "mdi-weight-lifter",
-      color: "green",
       route: "/workouts/gym"
     }]
-  })
+  }),
+  computed: {
+    color() {
+      const route = this.$route.path.split("/");
+      // @ts-ignore
+      return routes[route[route.length - 1]];
+    }
+  }
 })
 </script>
 <style scoped>

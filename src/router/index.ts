@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter, { RouteConfig } from "vue-router"
 import Home from "../views/Home.vue"
-import HomeW from "../views/workouts/Home.vue"
+import lotty from "../views/workouts/Lotty.vue"
 import Gym from "../views/workouts/Gym.vue"
 
 Vue.use(VueRouter)
@@ -15,9 +15,9 @@ const routes: Array<RouteConfig> = [{
   name: "Gym",
   component: Gym,
 }, {
-  path: "/workouts/warmup",
-  name: "Warmup",
-  component: Home,
+  path: "/workouts/lotty",
+  name: "Lotty",
+  component: lotty,
 }, {
   path: "/workouts/home",
   name: "HomeWorkout",
