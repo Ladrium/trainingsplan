@@ -48,7 +48,7 @@
 <script lang="ts">
 import Vue from "vue"
 
-const routes = { lotty: "indigo", gym: "cyan", home: "teal"}
+const routes = { lotty: "indigo", gym: "cyan", goals: "teal"}
 
 export default Vue.extend({
   name: "Navbar",
@@ -58,9 +58,9 @@ export default Vue.extend({
       icon: "mdi-face-woman-shimmer-outline",
       route: "/workouts/lotty"
     }, {
-      title: "Home",
-      icon: "mdi-home",
-      route: "/workouts/home"
+      title: "Goals",
+      icon: "mdi-flag-variant-outline",
+      route: "/workouts/goals"
     }, {
       title: "Gym",
       icon: "mdi-weight-lifter",

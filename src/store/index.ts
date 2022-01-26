@@ -10,6 +10,7 @@ const vuexPersist = new VuexPersist({
 
 export default new Vuex.Store({
   state: {
+    goals: []
   },
   mutations: {
   },

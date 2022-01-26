@@ -1,6 +1,6 @@
 import Vue from "vue"
 import VueRouter, { RouteConfig } from "vue-router"
-import Home from "../views/Home.vue"
+import Goals from "../views/workouts/Goals.vue"
 import lotty from "../views/workouts/Lotty.vue"
 import Gym from "../views/workouts/Gym.vue"
 
@@ -19,9 +19,9 @@ const routes: Array<RouteConfig> = [{
   name: "Lotty",
   component: lotty,
 }, {
-  path: "/workouts/home",
-  name: "HomeWorkout",
-  component: Home,
+  path: "/workouts/goals",
+  name: "Goals",
+  component: Goals,
 }]
 
 const router = new VueRouter({

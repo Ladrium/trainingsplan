@@ -10,8 +10,9 @@
         opacity=".9"
       >
         <v-img
-          class="white--text align-end"
-          height="200px"
+          class="white--text align-end align-self-stretch"
+          min="200"
+          max-width="350"
           :src="current.img"
         >
           <v-card-title></v-card-title>
@@ -24,7 +25,7 @@
     </v-overlay>
     <v-list dark width="100%" elevation="5">
       <v-list-group
-        v-for="(day, j) in days"
+        v-for="(day, i) in days"
         :key="day.name"
         v-model="day.active"
         no-action
@@ -51,13 +52,14 @@
             </thead>
             <tbody>
             <tr
-              v-for="(workout, i) in day.workouts"
+              v-for="(workout, j) in day.workouts"
               :key="workout.name"
-              @click="overlay = true; current = { name: workout.name, sets: workout.sets, reps: workout.reps, img: require(`@/assets/${j}-${i}.png`)}"
+              @click="o(); overlay = true; current = { name: workout.name, sets: workout.sets, reps: workout.reps, img: require(`@/assets/${workout.name}.png`)}"
             >
               <td>{{ workout.name }}</td>
               <td>{{ workout.sets }}</td>
               <td>{{ workout.reps }}</td>
+              {{rename(i, j, workout.name) }}
             </tr>
             </tbody>
           </template>
@@ -69,8 +71,7 @@
 
 <script lang="ts">
 import Vue from "vue"
-
-const noimg = true;
+let arr: { i: number, j: number, name: string }[] = [];
 
 export default Vue.extend({
   name: "Home",
@@ -88,66 +89,81 @@ export default Vue.extend({
       workouts: [{
         name: "Flat Bench Press",
         sets: 4,
-        reps: "8–10"
+        reps: "8–10",
+        img: "flatb"
       }, {
         name: "Incline Dumbbell Press",
         sets: 4,
-        reps: "8–10"
+        reps: "8–10",
+        img: "incdp"
       }, {
         name: "Triceps Pushdown – V-Bar Attachment",
         sets: 3,
-        reps: "9–12"
+        reps: "9–12",
+        img: "tpvba"
       }, {
-        name: "Decline Dumbbell Flyes",
+        name: "Cable fly",
         sets: "3",
-        reps: "8–12"
+        reps: "8–12",
+        img: "cabfly"
       }, {
         name: "Skull Crushers",
         sets: 3,
-        reps: "9–12"
+        reps: "9–12",
+        img: "skuc"
       }, {
         name: "Decline Bench Press",
         sets: 3,
-        reps: "8–10 reps each"
+        reps: "8–10 reps each",
+        img: "decbp"
       }, {
         name: "Butterfly",
         sets: 3,
-        reps: "10-12"
+        reps: "10-12",
+        img: "butfly"
       }]
     }, {
       name: "2. Rücken + Bizeps",
       workouts: [{
         name: "Seated Cable Rows",
         sets: 3,
-        reps: "8–10"
+        reps: "8–10",
+        img: "seatcr"
       }, {
         name: "Front Lat Pulldown",
         sets: 3,
-        reps: "8–10"
+        reps: "8–10",
+        img: "frontlp"
       }, {
         name: "Bent Over Barbell Rows",
         sets: 2,
-        reps: "8–10"
+        reps: "8–10",
+        img: "bentobr"
       }, {
         name: "Hammer Curls",
         sets: 3,
-        reps: " 8–12"
+        reps: " 8–12",
+        img: "hamc"
       }, {
         name: "Deadlift",
         sets: 2,
-        reps: "8–10"
+        reps: "8–10",
+        img: "deadl"
       }, {
         name: "Barbell Curl (EZ-bar)",
         sets: 3,
-        reps: "8–10"
+        reps: "8–10",
+        img: "barcez"
       }, {
         name: "Straight-Arm Pulldown",
         sets: 2,
-        reps: "8–10"
+        reps: "8–10",
+        img: "strap"
       }, {
         name: "Concentration Curls",
         sets: 3,
-        reps: "8–12"
+        reps: "8–12",
+        img: "conc"
       }]
     }, {
       name: "3. Core + Unterarme + Waden + Cardio",
@@ -155,34 +171,42 @@ export default Vue.extend({
         name: "Crunches",
         sets: 3,
         reps: "10-12",
+        img: "crunc"
       }, {
         name: "Hanging Leg Raise",
         sets: 3,
-        reps: "10-12"
+        reps: "10-12",
+        img: "hanlr"
       }, {
         name: "Russian Twist",
         sets: 2,
-        reps: "12-15"
+        reps: "12-15",
+        img: "rust"
       }, {
         name: "Bycicle Crunches",
         sets: 10,
-        reps: "Max"
+        reps: "Max",
+        img: "bycrunc"
       }, {
         name: "Plank",
         sets: 2,
-        reps: "Max Hold"
+        reps: "Max Hold",
+        img: "plank"
       }, {
         name: "Palms-Up Barbell Wrist Curl",
         sets: 3,
-        reps: "Max"
+        reps: "Max",
+        img: "palubwc"
       }, {
         name: "Seated Calf Raise",
         sets: 3,
-        reps: "8-15"
+        reps: "8-15",
+        img: "seacr"
       }, {
         name: "Palm Down Barbell Wrist Curls",
         sets: 3,
         reps: "Max",
+        img: ""
       }, {
         name: "Smith Machine Calf Raise",
         sets: 3,
@@ -210,7 +234,13 @@ export default Vue.extend({
         name: "Side Lateral Raise",
         sets: 4,
         reps: "8–12"
-      }, {
+      },
+      {
+        name: "Military Press",
+        sets: 3,
+        reps: "8-12"
+      },
+       {
         name: "Standing Dumbbell Triceps Extension",
         sets: 4,
         reps: "8–12"
@@ -272,25 +302,34 @@ export default Vue.extend({
         name: "Joggen",
         sets: 1,
         reps: "5-20 min",
-        noimg
+        img: "jog"
       }, {
         name: "Seilspringen",
         sets: 3,
         reps: "Max.",
-        noimg
+        img: "seil"
       }, {
         name: "Hampelmann",
         sets: 3,
-        reps: "Max",
-        noimg
+        reps: "Max.",
+        img: "heli"
       }, {
         name: "Bergsteiger",
         sets: 3,
         reps: "20-25",
-        noimg
+        img: "bs"
       }]
     }]
-  })
+  }),
+  methods: {
+    rename(i: number, j: number, name: string) {
+      arr.push({ i, j, name });
+    },
+    o() {
+      // @ts-ignore
+      console.log(arr);
+    }
+  }
 })
 </script>
 <style>

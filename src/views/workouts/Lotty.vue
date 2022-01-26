@@ -17,7 +17,7 @@
     </v-overlay>
     <v-list dark width="100%" elevation="5">
       <v-list-group
-        v-for="(day, j) in days"
+        v-for="day in days"
         :key="day.name"
         v-model="day.active"
         no-action
@@ -44,7 +44,7 @@
             </thead>
             <tbody>
               <tr
-                v-for="(workout, i) in day.workouts"
+                v-for="workout in day.workouts"
                 :key="workout.name"
                 @click="
                   overlay = true;
@@ -52,7 +52,7 @@
                     name: workout.name,
                     sets: workout.sets,
                     reps: workout.reps,
-                    img: require(`@/assets/${j}-${i}.png`)
+                    img: require(`@/assets/${workout.name}.png`)
                   };
                 "
               >
@@ -109,17 +109,16 @@ export default Vue.extend({
       {
         name: "2. Oberkörper",
         workouts: [
-          { name: "Warm Up Bench Press", reps: "12-15", sets: " 2",  },
-          { name: "Bench Press", reps: "8-12", sets: " 4",  },
+          { name: "Flat Bench Press", reps: "12-15 + 8-12", sets: "2 + 4",  },
           { name: "(Knee) Push Ups", reps: "8-12", sets: " 4",  },
-          { name: "Lat Pulldown", reps: "12-15", sets: " 4",  },
-          { name: "Seated Cable Row", reps: "12-15", sets: " 4",  }
+          { name: "Front Lat Pulldown", reps: "12-15", sets: " 4",  },
+          { name: "Seated Cable Rows", reps: "12-15", sets: " 4",  }
         ]
       },
       {
         name: "3. Core & LISS Cardio",
         workouts: [
-          { name: "Warm Up Crunches", reps: "10", sets: " 2",  },
+          { name: "Crunches", reps: "10", sets: " 2",  },
           {
             name: "Roman Chair Leg Raise",
             reps: "12-15",
@@ -144,50 +143,44 @@ export default Vue.extend({
         name: "4. Beine",
         workouts: [
           {
-            name: "Warm Up Stiff-Legged Barbell Deadlift",
+            name: "Barbell Hip Thrust",
             reps: "12-20",
-            sets: " 2",
+            sets: "4",
             
           },
           {
-            name: "Stiff-Legged Barbell Deadlift",
+            name: "Lying Leg Curls",
             reps: "12-15",
-            sets: " 4",
+            sets: "4",
             
           },
           {
             name: "Barbell Glute Bridge",
             reps: "12-15",
-            sets: " 4",
+            sets: "4",
             
           },
-          { name: "Reverse Lunge", reps: "8-12", sets: " 4",  },
-          { name: "Standing Calf Raise", reps: "12-15", sets: " 4",  }
+          { name: "Lunge", reps: "8-12", sets: "4",  },
+          { name: "Smith Machine Calf Raise", reps: "12-15", sets: "4",  }
         ]
       },
       {
         name: "5. Oberkörper & HIIT Cardio",
         workouts: [
           {
-            name: "Warm Up standing Barbell Shoulder Press",
-            reps: "12-15",
-            sets: " 2",
-            
-          },
-          {
             name: "Standing Barbell Shoulder Press",
-            reps: "8-12",
-            sets: " 4",
+            reps: "12-15 + 8-12",
+            sets: "2 + 4",
             
           },
           { name: "Side Lateral Raise", reps: "12-15", sets: " 4",  },
           {
-            name: "EZ Barbell Bicep Curl",
+            name: "Barbell Curl (EZ-bar)",
             reps: "12-15",
             sets: " 4",
-            
+            img: "barcez"
           },
-          { name: "Tricep Dips", reps: "12-15", sets: " 4",  },
+          { name: "Dips", reps: "12-15", sets: " 4",  },
           { name: "HIIT Cardio" }
         ]
       }
