@@ -1,5 +1,5 @@
 {
-  "name": "v2",
+  "name": "trainingsplan",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -57,12 +57,6 @@
     ],
     "parserOptions": {
       "ecmaVersion": 2020
-    },
-    "rules": {
-      "quotes": "off",
-      "comma-dangle": "off",
-      "semi": "off",
-      "space-before-function-paren": "off"
     },
     "overrides": [
       {
