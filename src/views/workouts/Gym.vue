@@ -17,37 +17,30 @@ export default Vue.extend({
         name: "Flat Bench Press",
         sets: 4,
         reps: "8–10",
-        img: "flatb"
       }, {
         name: "Incline Dumbbell Press",
         sets: 4,
         reps: "8–10",
-        img: "incdp"
       }, {
         name: "Triceps Pushdown – V-Bar Attachment",
         sets: 3,
         reps: "9–12",
-        img: "tpvba"
       }, {
         name: "Cable fly",
         sets: "3",
         reps: "8–12",
-        img: "cabfly"
       }, {
         name: "Skull Crushers",
         sets: 3,
         reps: "9–12",
-        img: "skuc"
       }, {
         name: "Decline Bench Press",
         sets: 3,
         reps: "8–10 reps each",
-        img: "decbp"
       }, {
         name: "Butterfly",
         sets: 3,
         reps: "10-12",
-        img: "butfly"
       }]
     }, {
       name: "2. Rücken + Bizeps",
@@ -55,85 +48,79 @@ export default Vue.extend({
         name: "Seated Cable Rows",
         sets: 3,
         reps: "8–10",
-        img: "seatcr"
       }, {
         name: "Front Lat Pulldown",
         sets: 3,
         reps: "8–10",
-        img: "frontlp"
       }, {
         name: "Bent Over Barbell Rows",
         sets: 2,
         reps: "8–10",
-        img: "bentobr"
       }, {
         name: "Hammer Curls",
         sets: 3,
         reps: " 8–12",
-        img: "hamc"
       }, {
         name: "Deadlift",
         sets: 2,
         reps: "8–10",
-        img: "deadl"
       }, {
         name: "Barbell Curl (EZ-bar)",
         sets: 3,
         reps: "8–10",
-        img: "barcez"
       }, {
         name: "Straight-Arm Pulldown",
         sets: 2,
         reps: "8–10",
-        img: "strap"
       }, {
         name: "Concentration Curls",
         sets: 3,
         reps: "8–12",
-        img: "conc"
-      }]
+      },
+        {
+          type: "Cycle",
+          name: "HIIT",
+          sets: 1,
+          reps: 4,
+          cycles: [{
+            cycles: 4,
+            workouts: ["Max Plank", "10 Squats", "10 Lunges", "10 Push Ups", "10 Leg Raise", "Max Mountain Climbers", "10 Pike Push Ups"]
+          }]
+        }]
     }, {
       name: "3. Core + Unterarme + Waden + Cardio",
       workouts: [{
         name: "Crunches",
         sets: 3,
         reps: "10-12",
-        img: "crunc"
       }, {
         name: "Hanging Leg Raise",
         sets: 3,
         reps: "10-12",
-        img: "hanlr"
       }, {
         name: "Russian Twist",
         sets: 2,
         reps: "12-15",
-        img: "rust"
       }, {
         name: "Bycicle Crunches",
         sets: 10,
         reps: "Max",
-        img: "bycrunc"
       }, {
         name: "Plank",
         sets: 2,
         reps: "Max Hold",
-        img: "plank"
       }, {
         name: "Palms-Up Barbell Wrist Curl",
         sets: 3,
         reps: "Max",
-        img: "palubwc"
       }, {
         name: "Seated Calf Raise",
         sets: 3,
         reps: "8-15",
-        img: "seacr"
       }, {
         name: "Palm Down Barbell Wrist Curls",
         sets: 3,
         reps: "Max",
-        img: ""
       }, {
         name: "Smith Machine Calf Raise",
         sets: 3,
@@ -187,6 +174,15 @@ export default Vue.extend({
           name: "Shrugs",
           sets: 3,
           reps: "8–10"
+        }, {
+          type: "Cycle",
+          reps: 4,
+          name: "HIIT",
+          sets: 1,
+          cycles: [{
+            cycles: 4,
+            workouts: ["10 Close Hand Chin Ups", "10 Pull Ups", "10 Dips", "10-20 Push Ups", "10 Leg Raises", "10 Squats", "10 Pull Ups"]
+          }]
         }]
     }, {
       name: "5. Beine + Bizeps",
@@ -222,6 +218,15 @@ export default Vue.extend({
         name: "Leg Extensions",
         sets: 3,
         reps: "8–12"
+      }, {
+        type: "Cycle",
+        reps: 4,
+        name: "HIIT",
+        sets: 1,
+        cycles: [{
+          cycles: 4,
+          workouts: ["20 Wide Push Ups", "20 Mountain Climbers", "60 Second Wall Sit", "15 Clap Push Ups", "30 Seconds Superman Hold", "30 Squats", "60 Second Plank"]
+        }]
       }]
     }, {
       name: "6. Leichtes Cardio / HIIT",

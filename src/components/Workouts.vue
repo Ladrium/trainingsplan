@@ -15,7 +15,7 @@
           max-width="350"
           :src="current.img"
         >
-          <v-card-title></v-card-title>
+          <v-card-title class="text-overline">{{ current.name }}</v-card-title>
         </v-img>
         <v-card-text>
           <div>Sets: {{ current.sets }}</div>
@@ -35,10 +35,10 @@
         <v-card-text>
           <div class="text-overline">{{ current.overline }}</div>
           <v-timeline align-top dense>
-            <v-timeline-item v-for="cycle in current.cycles" :color="cycle.color" small>
+            <v-timeline-item v-for="cycle in current.cycles" :color="cycle.color" small :key="cycle">
               <div class="font-weight-normal">
                 <strong>{{ cycle.cycles }}</strong> Cycles
-                <div v-for="w in cycle.workouts">{{w}}</div>
+                <div v-for="w in cycle.workouts">{{ w }}</div>
               </div>
             </v-timeline-item>
           </v-timeline>
@@ -99,7 +99,7 @@ export default Vue.extend({
   data: () => ({
     overlay: false,
     cOverlay: false,
-    current: {},
+    current: { cycles: [] },
   }),
   methods: {
     openOverlay(workout: any) {
