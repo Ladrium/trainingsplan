@@ -32,7 +32,7 @@ import Vue from "vue"
 export default Vue.extend({
   name: "Calisthenic Goals",
   data: () => ({
-    goals: ["L-Sit"]
+    goals: ["L-Sit", "Forearm Stand", "Frog Stand", "Superman Push Ups", "Elbow Lever", "Skin The Cat", "Handstand", "Muscle Up"]
   })
 })
 </script>

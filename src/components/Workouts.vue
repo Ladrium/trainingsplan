@@ -99,7 +99,7 @@ export default Vue.extend({
   data: () => ({
     overlay: false,
     cOverlay: false,
-    current: { cycles: [] },
+    current: { },
   }),
   methods: {
     openOverlay(workout: any) {
