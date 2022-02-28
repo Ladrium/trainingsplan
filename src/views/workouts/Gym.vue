@@ -93,7 +93,7 @@ export default Vue.extend({
           }]
         }]
     }, {
-      name: "3. Legs (Beine, Cardio, Bauch)",
+      name: "3. Legs & Abs (Beine, Cardio, Bauch)",
       workouts: [{
         name: "Squat",
         sets: 4,
@@ -115,18 +115,22 @@ export default Vue.extend({
         sets: 3,
         reps: "8-15",
       }, {
-        name: "Smith Machine Calf Raise",
-        sets: 3,
-        reps: "8-15"
-      }, {
         name: "Crunches",
         sets: 4,
         reps: "Max"
       }, {
-        name: "Cardio",
-        sets: 1,
-        reps: "10 mins before/after workout"
-      }]
+        name: "Plank",
+        sets: 3,
+        reps: "Max Hold"
+      }, {
+        name: "Leg Raise",
+        sets: 4,
+        reps: "Max"
+      }, {
+          name: "Cardio",
+          sets: 1,
+          reps: "10 mins before/after workout"
+        }]
     }, {
       name: "4. Push (Brust, Schulter, Trizeps)",
       workouts: [{
