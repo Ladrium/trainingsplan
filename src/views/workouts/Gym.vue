@@ -11,72 +11,77 @@ export default Vue.extend({
   components: { Workouts },
   data: () => ({
     days: [{
-      name: "1. Brust + Trizeps",
+      name: "1. Push (Brust, Schulter, Trizeps)",
       icon: "mdi-numeric-1",
       workouts: [{
         name: "Flat Bench Press",
         sets: 4,
-        reps: "8–10",
+        reps: "Max, 12, 10, 8",
       }, {
         name: "Incline Dumbbell Press",
-        sets: 4,
-        reps: "8–10",
-      }, {
-        name: "Triceps Pushdown – V-Bar Attachment",
         sets: 3,
-        reps: "9–12",
+        reps: "10, 12, Max",
       }, {
         name: "Cable fly",
-        sets: "3",
-        reps: "8–12",
+        sets: 3,
+        reps: "12, 10, 8",
+      }, {
+        name: "Military Press",
+        sets: 3,
+        reps: "10, 12, Max"
+      }, {
+        name: "Side Lateral Raise",
+        sets: 3,
+        reps: "12, 10, 8"
       }, {
         name: "Skull Crushers",
         sets: 3,
         reps: "9–12",
       }, {
-        name: "Decline Bench Press",
+        name: "Triceps Pushdown – V-Bar Attachment",
         sets: 3,
-        reps: "8–10 reps each",
+        reps: "9–12",
       }, {
         name: "Butterfly",
         sets: 3,
         reps: "10-12",
       }]
     }, {
-      name: "2. Rücken + Bizeps",
+      name: "2. Pull (Rücken, Bizeps)",
       workouts: [{
-        name: "Seated Cable Rows",
+        name: "Pull Up",
         sets: 3,
-        reps: "8–10",
+        reps: "Max",
       }, {
         name: "Front Lat Pulldown",
-        sets: 3,
-        reps: "8–10",
+        sets: 4,
+        reps: "Max, 12, 10, 8",
       }, {
         name: "Bent Over Barbell Rows",
-        sets: 2,
-        reps: "8–10",
+        sets: 4,
+        reps: "12, 10, 8, 6",
       }, {
-        name: "Hammer Curls",
+        name: "Seated Cable Rows",
+        sets: 4,
+        reps: "Max, 12, 10, 8"
+      }, {
+        name: "Face Pull",
         sets: 3,
-        reps: " 8–12",
-      }, {
-        name: "Deadlift",
-        sets: 2,
-        reps: "8–10",
+        reps: "8–12",
       }, {
         name: "Barbell Curl (EZ-bar)",
         sets: 3,
-        reps: "8–10",
-      }, {
-        name: "Straight-Arm Pulldown",
-        sets: 2,
-        reps: "8–10",
+        reps: "Max, 10, 8",
       }, {
         name: "Concentration Curls",
-        sets: 3,
-        reps: "8–12",
+        sets: 2,
+        reps: "10",
       },
+        {
+          name: "Palms-Up Barbell Wrist Curl",
+          sets: 3,
+          reps: "Max",
+        },
         {
           type: "Cycle",
           name: "HIIT",
@@ -88,136 +93,114 @@ export default Vue.extend({
           }]
         }]
     }, {
-      name: "3. Core + Unterarme + Waden + Cardio",
+      name: "3. Legs (Beine, Cardio, Bauch)",
       workouts: [{
-        name: "Crunches",
+        name: "Squat",
+        sets: 4,
+        reps: "15, 12, 10, 8",
+      }, {
+        name: "Leg Press",
         sets: 3,
-        reps: "10-12",
+        reps: "12, 10, 8",
       }, {
-        name: "Hanging Leg Raise",
+        name: "Lying Leg Curls",
         sets: 3,
-        reps: "10-12",
+        reps: "10, 8, 6",
       }, {
-        name: "Russian Twist",
-        sets: 2,
-        reps: "12-15",
-      }, {
-        name: "Bycicle Crunches",
-        sets: 10,
-        reps: "Max",
-      }, {
-        name: "Plank",
-        sets: 2,
-        reps: "Max Hold",
-      }, {
-        name: "Palms-Up Barbell Wrist Curl",
+        name: "Leg Extension",
         sets: 3,
-        reps: "Max",
+        reps: "12, 10, 8"
       }, {
         name: "Seated Calf Raise",
         sets: 3,
         reps: "8-15",
       }, {
-        name: "Palm Down Barbell Wrist Curls",
-        sets: 3,
-        reps: "Max",
-      }, {
         name: "Smith Machine Calf Raise",
         sets: 3,
         reps: "8-15"
+      }, {
+        name: "Crunches",
+        sets: 4,
+        reps: "Max"
       }, {
         name: "Cardio",
         sets: 1,
         reps: "10 mins before/after workout"
       }]
     }, {
-      name: "4. Schultern + Trizeps",
+      name: "4. Push (Brust, Schulter, Trizeps)",
       workouts: [{
-        name: "Seated Dumbbell Press",
+        name: "Flat Bench Press",
         sets: 4,
-        reps: "8–10"
+        reps: "Max, 12, 10, 8"
       }, {
-        name: "Incline Shoulder Press",
-        sets: 4,
-        reps: "10-12"
+        name: "Incline Barbell Bench Press",
+        sets: 3,
+        reps: "12, 10, 8"
       }, {
-        name: "Dips",
+        name: "Decline Barbell Bench Press",
+        sets: 3,
+        reps: "12, 10, 8"
+      }, {
+        name: "Standing Dumbbell Triceps Extension",
+        sets: 3,
+        reps: "12, 12, 10"
+      }, {
+        name: "Triceps Kickback",
+        sets: 3,
+        reps: "12, 12, 10"
+      }, {
+        name: "Arnold Press",
         sets: 4,
-        reps: "8–10"
+        reps: "Max, 12, 12, 10"
       }, {
         name: "Side Lateral Raise",
         sets: 4,
-        reps: "8–12"
-      },
-        {
-          name: "Military Press",
-          sets: 3,
-          reps: "8-12"
-        },
-        {
-          name: "Standing Dumbbell Triceps Extension",
-          sets: 4,
-          reps: "8–12"
-        }, {
-          name: "Front Lateral Raise",
-          sets: 4,
-          reps: "8–12"
-        }, {
-          name: "Triceps Pushdown — Rope Attachment",
-          sets: 4,
-          reps: "8–12"
-        }, {
-          name: "Reverse Flyes",
-          sets: 4,
-          reps: "8–12"
-        }, {
-          name: "Shrugs",
-          sets: 3,
-          reps: "8–10"
-        }, {
-          type: "Cycle",
-          reps: 4,
-          name: "HIIT",
-          sets: 1,
-          cycles: [{
-            cycles: 4,
-            workouts: ["10 Close Hand Chin Ups", "10 Pull Ups", "10 Dips", "10-20 Push Ups", "10 Leg Raises", "10 Squats", "10 Pull Ups"]
-          }]
+        reps: "12, 12, 10, 8"
+      }, {
+        name: "Shrugs",
+        sets: 3,
+        reps: "8–10"
+      }, {
+        type: "Cycle",
+        reps: 4,
+        name: "HIIT",
+        sets: 1,
+        cycles: [{
+          cycles: 4,
+          workouts: ["10 Close Hand Chin Ups", "10 Pull Ups", "10 Dips", "10-20 Push Ups", "10 Leg Raises", "10 Squats", "10 Pull Ups"]
         }]
+      }]
     }, {
-      name: "5. Beine + Bizeps",
+      name: "5. Pull (Rücken, Bizeps)",
       workouts: [{
-        name: "Squats",
-        sets: 4,
-        reps: "6–8"
-      }, {
-        name: "Wide-Grip Standing Barbell Curl",
-        sets: 4,
-        reps: "8–12"
-      }, {
-        name: "Leg Press",
+        name: "Deadlift",
         sets: 3,
-        reps: "8–10"
+        reps: "10, 8, 6"
       }, {
-        name: "Spider Curl",
+        name: "Front Lat Pulldown",
         sets: 4,
-        reps: "8–10"
+        reps: "Max, 12, 10, 8"
       }, {
-        name: "Smith Machine Calf Raise",
+        name: "Seated Cable Rows",
         sets: 4,
-        reps: "8–12"
+        reps: "Max, 12, 10, 8"
       }, {
-        name: "Lying Leg Curls",
+        name: "Single Dumbbell Row",
         sets: 3,
-        reps: "8–12"
+        reps: "12, 12, 10"
       }, {
-        name: "Machine Bicep Curl",
+        name: "Barbell Curl (EZ-bar)",
         sets: 3,
-        reps: "8–12"
+        reps: "12, 12, 10"
       }, {
-        name: "Leg Extensions",
+        name: "Preacher Curl",
         sets: 3,
-        reps: "8–12"
+        reps: "12, 10, 10"
+      }, {
+        name: "Cable Curl",
+        sets: 3,
+        reps: "12"
       }, {
         type: "Cycle",
         reps: 4,

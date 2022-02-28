@@ -71,7 +71,7 @@ export default Vue.extend({
     color() {
       const route = this.$route.path.split("/");
       // @ts-ignore
-      return routes[route[route.length - 1]];
+      return routes[route[route.length - 1] || "gym"];
     }
   }
 })
