@@ -110,10 +110,14 @@ export default Vue.extend({
   methods: {
     openOverlay(workout: any) {
       if (workout.type === "Cycle") {
+        // @ts-ignore
         this.cOverlay = true;
+        // @ts-ignore
         this.current = { cycles: workout.cycles, overline: workout.name };
       } else {
+        // @ts-ignore
         this.overlay = true;
+        // @ts-ignore
         this.current = {
           name: workout.name,
           sets: workout.sets,
