@@ -5,7 +5,8 @@
         <v-icon>mdi-exit-to-app</v-icon>
       </v-btn>
       <v-card
-        class="mx-auto green accent-4"
+        class="mx-auto accent-4"
+        :class="color"
         max-width="400"
         opacity=".9"
       >
@@ -42,6 +43,9 @@
               </div>
             </v-timeline-item>
           </v-timeline>
+          <v-card-actions>
+            <v-btn color="primary">Start</v-btn>
+          </v-card-actions>
         </v-card-text>
       </v-card>
     </v-overlay>
@@ -93,13 +97,15 @@
 <script lang="ts">
 import Vue from "vue"
 
+const routes = { lotty: "indigo", gym: "cyan", goals: "teal"};
+
 export default Vue.extend({
   name: "Workouts",
   props: ["days"],
   data: () => ({
     overlay: false,
     cOverlay: false,
-    current: { },
+    current: {},
   }),
   methods: {
     openOverlay(workout: any) {
@@ -115,6 +121,13 @@ export default Vue.extend({
           img: require(`@/assets/${workout.name}.png`)
         }
       }
+    }
+  },
+  computed: {
+    color() {
+      const route = this.$route.path.split("/");
+      // @ts-ignore
+      return routes[route[route.length - 1] || "gym"];
     }
   }
 })

@@ -15,8 +15,11 @@ register(`${process.env.BASE_URL}service-worker.js`, {
   updatefound() {
     console.log("New content is downloading.")
   },
-  updated() {
-    console.log("New content is available; please refresh.")
+  updated(registration) {
+    console.log("New content is available; please refresh.");
+    document.dispatchEvent(
+      new CustomEvent("swUpdated", { detail: registration })
+    )
   },
   offline() {
     console.log("No internet connection found. App is running in offline mode.")

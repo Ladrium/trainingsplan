@@ -16,7 +16,6 @@
           v-for="item in items"
           :key="item.title"
           link
-          @click="color = item.color"
           route :to="item.route"
         >
           <v-list-item-icon>
@@ -30,14 +29,13 @@
       </v-list>
     </v-navigation-drawer>
     <v-bottom-navigation
-      v-model="value"
       :background-color="color"
       dark
       shift
       fixed
       class="hidden-md-and-up accent-4"
     >
-      <v-btn v-for="item in items" :key="item.title" style="background: transparent; height: 100%; width: 20%;" @click="color = item.color" route :to="item.route">
+      <v-btn v-for="item in items" :key="item.title" style="background: transparent; height: 100%; width: 20%;" route :to="item.route">
         <span>{{ item.title }}</span>
         <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
@@ -48,7 +46,7 @@
 <script lang="ts">
 import Vue from "vue"
 
-const routes = { lotty: "indigo", gym: "cyan", goals: "teal"}
+const routes = { lotty: "indigo", gym: "cyan", goals: "teal"};
 
 export default Vue.extend({
   name: "Navbar",
